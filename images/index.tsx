@@ -2,10 +2,9 @@ import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 
 import { Hello } from './Hello'
-import { Marquee } from './Marquee'
-import { SYSTEM_FONT, WaitFor } from '../lib'
+import {  WaitFor } from '../lib'
 
-const images: { [name: string]: React.FC } = { Hello, Marquee }
+const images: { [name: string]: React.FC } = { Hello }
 
 export async function renderImage(imageName: string) {
   const start = Date.now()
@@ -44,7 +43,7 @@ function ImageNotFound(props: { name: string }) {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <text x="0" y="15" fill="red" fontFamily={SYSTEM_FONT}>
+      <text x="0" y="15" fill="red">
         Image not found: {props.name}
       </text>
     </svg>
